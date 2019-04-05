@@ -13,7 +13,7 @@ class ContactUsController extends AbstractController
     public function index()
     {
         return $this->render('pages/contact.html.twig', [
-            'controller_name' => 'ContactUsController',
+            'user' => $this->getUser(),
         ]);
     }
 }

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
     <div class="container">
         <a class="navbar-brand" href="{{ path('index') }}">
-            <img src="https://www.guns.com/images/gdc-banner-latest.png" alt="logo" id="logoImage">
+            <img src="{{ asset('images/logo.png') }}" alt="logo" id="logoImage">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-label="navigation bar toggler">
@@ -31,13 +31,15 @@
                            data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false" aria-label="dropdown">
                             <img id="avatar"
-                                 src="https://res.cloudinary.com/demo/image/gravatar/d_identicon,h_36,w_36,c_fill/a9a1a6dafde8cf0c7e8ee9b177160939.jpg"
+                                 src="https://res.cloudinary.com/demo/image/gravatar/d_identicon,h_20,w_20,c_fill/a9a1a6dafde8cf0c7e8ee9b177160939.jpg"
                                  alt="avatar">
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Signed in as GDCAdmin</a>
+                            <div class="dropdown-item">Signed in
+                                as {{ app.user.getFullName() }}</div>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">My Profile</a>
+                            <a class="dropdown-item" href="{{ path('profile', {'id':app.user.getId()}) }}">My
+                                Profile</a>
                             <a class="dropdown-item" href="#">Another action</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ path('app_logout') }}">Logout</a>
