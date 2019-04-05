@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <div class="row justify-content-md-center">
+        <div class="col-lg-5 col-md-7">
+            <form action="{{ path('app_login') }}" method="post" class="register" id="login">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+                <h1 class="h3 mb-3 font-weight-normal">Create an account</h1>
+                <div class="form-group">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" value="{{ last_username }}" name="_username" id="inputEmail"
+                           class="form-control"
+                           placeholder="Email" required autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" name="_password" id="inputPassword" class="form-control"
+                           placeholder="Password"
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">Password Again</label>
+                    <input type="password" name="_password" id="inputPassword" class="form-control"
+                           placeholder="Password"
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">First Name</label>
+                    <input type="text" name="_password" id="inputPassword" class="form-control"
+                           placeholder="Password"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputPassword">Last Name</label>
+                    <input type="text" name="_password" id="inputPassword" class="form-control"
+                           placeholder="Password"
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">Date of Birth</label>
+                    <input type="date" name="_password" id="inputPassword" class="form-control"
+                           placeholder="Password"
+                           required>
+                </div>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                <div class="g-recaptcha form-group" data-sitekey="6Lcsb5kUAAAAAPM6zbJkBbJKjNgVeJ6RBT5CTwfI"></div>
+                <div id="button-section">
+                    <div class="form-check form-check-inline float-left mt-2">
+                        <label>
+                            <input type="checkbox" name="_remember_me"> I agree to the terms
+                        </label>
+                    </div>
+
+                    <button class="btn btn-lg btn-primary" id="inputButton" type="submit">
+                        Sign up
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
