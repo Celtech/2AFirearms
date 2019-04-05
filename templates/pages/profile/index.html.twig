@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="card">
+        <div class="card-header">
+            <h3 class="d-inline">User Profile</h3>
+            <div class="float-right d-inline">
+                <button class="btn btn-danger">Ban User</button>
+                <button class="btn btn-danger">Delete User</button>
+                <button class="btn btn-primary">Reset Password</button>
+                <button class="btn btn-success">Edit Profile</button>
+            </div>
+        </div>
+        <div class="card-body">
+            <ul class="list-unstyled">
+                <li><strong>Full Name:</strong> {{ profile.getFullname() }}</li>
+                <li><strong>Email:</strong> {{ profile.getEmail() }}</li>
+                <li><strong>DOB:</strong> {{ profile.getDateOfBirth()|date("m/d/Y") }}</li>
+                <li><strong>Last Login:</strong> {{ profile.getLastLoggedIn()|date("m/d/Y") }}</li>
+                <li><strong>Registered:</strong> {{ profile.getCreatedAt()|date("m/d/Y") }}</li>
+                <li><strong>Roles:</strong> {% for role in profile.getRoles() %}{{ role }} {% endfor %} </li>
+                <li><strong>Verified:</strong> {{ profile.getIsVerified() }}</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
