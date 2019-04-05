@@ -20,8 +20,13 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "@babel/plugin-proposal-class-properties": "^7.4.0",
+        "@babel/plugin-transform-runtime": "^7.4.3",
+        "axios": "^0.18.0",
         "prop-types": "^15.7.2",
         "react": "^16.8.6",
-        "react-dom": "^16.8.6"
+        "react-dom": "^16.8.6",
+        "react-router-dom": "^5.0.0",
+        "reactstrap": "^8.0.0"
     }
 }

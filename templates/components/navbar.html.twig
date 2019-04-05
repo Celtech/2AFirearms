@@ -3,34 +3,36 @@
         <a class="navbar-brand" href="{{ path('index') }}">
             <img src="https://www.guns.com/images/gdc-banner-latest.png" alt="logo" id="logoImage">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-label="navigation bar toggler">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item {% if app.request.attributes.get('_route') == 'index' %}active{% endif %}">
-                    <a class="nav-link" href="{{ path('index') }}">Home</a>
+                    <a class="nav-link" aria-label="Home" href="{{ path('index') }}">Home</a>
                 </li>
-                <li class="nav-item {% if app.request.attributes.get('_route') == 'index' %}active{% endif %}">
-                    <a class="nav-link" href="{{ path('index') }}">About Us</a>
+                <li class="nav-item {% if app.request.attributes.get('_route') == 'about' %}active{% endif %}">
+                    <a class="nav-link" aria-label="about us" href="{{ path('about') }}">About Us</a>
                 </li>
-                <li class="nav-item {% if app.request.attributes.get('_route') == 'index' %}active{% endif %}">
-                    <a class="nav-link" href="{{ path('index') }}">Reviews</a>
+                <li class="nav-item {% if app.request.attributes.get('_route') == 'reviews' %}active{% endif %}">
+                    <a class="nav-link" aria-label="Reviews" href="{{ path('reviews') }}">Reviews</a>
                 </li>
-                <li class="nav-item {% if app.request.attributes.get('_route') == 'index' %}active{% endif %}">
-                    <a class="nav-link" href="{{ path('index') }}">Shop</a>
+                <li class="nav-item {% if app.request.attributes.get('_route') == 'shop' %}active{% endif %}">
+                    <a class="nav-link" aria-label="Shop" href="{{ path('shop') }}">Shop</a>
                 </li>
-                <li class="nav-item {% if app.request.attributes.get('_route') == 'index' %}active{% endif %}">
-                    <a class="nav-link" href="{{ path('index') }}">Contact Us</a>
+                <li class="nav-item {% if app.request.attributes.get('_route') == 'contact' %}active{% endif %}">
+                    <a class="nav-link" aria-label="Contact Us" href="{{ path('contact') }}">Contact Us</a>
                 </li>
                 {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">
+                           aria-haspopup="true" aria-expanded="false" aria-label="dropdown">
                             <img id="avatar"
-                                 src="https://res.cloudinary.com/demo/image/gravatar/d_identicon,h_36,w_36,c_fill/a9a1a6dafde8cf0c7e8ee9b177160939.jpg">
+                                 src="https://res.cloudinary.com/demo/image/gravatar/d_identicon,h_36,w_36,c_fill/a9a1a6dafde8cf0c7e8ee9b177160939.jpg"
+                                 alt="avatar">
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Signed in as GDCAdmin</a>

@@ -7,92 +7,104 @@ $lightGray: #e1e1e1;
 $accent: #c08657;
 
 body {
-  position: relative;
-  margin: 0;
-  padding-bottom: 6rem;
-  min-height: 100vh;
-  background: #efefef;
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100vh;
+    background: #efefef;
 
-  .darker-breadcrumb {
-    color: #ffffff !important;
-    border-radius: 0 !important;
-    background: $secondary !important;
+    .darker-breadcrumb {
+        color: #ffffff !important;
+        border-radius: 0 !important;
+        background: $secondary !important;
 
 
-    a {
-      color: #ffffff;
+        a {
+            color: #ffffff;
+        }
+
+        .active {
+            color: $lightGray !important;
+        }
     }
 
-    .active {
-      color: $lightGray !important;
-    }
-  }
+    #mainNav {
+        #logoImage {
+            width: 150px;
+            height: 40px;
+        }
 
-  #mainNav {
-    #logoImage {
-      width: 150px;
-      height: 40px;
-    }
+        #avatar {
+            width: 20px;
+            margin-top: -6px;
+        }
 
-    #avatar {
-      width: 20px;
-      margin-top: -6px;
-    }
-  }
+        .active {
+            .nav-link a {
+                color: rgba(255, 255, 255, 1) !important;
+            }
+        }
 
-  .pagination > li > a {
-    color: #000;
-  }
-
-  .page-item.active .page-link {
-    border: 1px solid darken($primary, 10%);
-    background: $primary !important;
-    color: #fff;
-  }
-
-  #inputButton {
-    min-width: 120px;
-    background: #c08657;
-    border: darken(#c08657, 20%);
-  }
-
-  .register {
-    margin-top: 10px !important;
-  }
-
-  #login {
-    background: #ffffff;
-    border: 1px solid darken(#e1e1e1, 10%);
-    margin: 25% auto 10px auto;
-    padding: 20px 30px 20px 30px;
-    box-shadow: 1px 1px 10px -4px #1b1e21;
-
-    input {
-      max-width: 100% !important;
+        .nav-item {
+            .nav-link a {
+                color: rgba(255, 255, 255, 0.7);
+            }
+        }
     }
 
-    label {
-      margin-bottom: 0;
+    .pagination > li > a {
+        color: #000;
     }
 
-    #button-section {
-      border-top: 1px solid darken(#e1e1e1, 10%);
-      margin: 0 0 -20px -30px;
-      padding: 10px 30px 10px 30px;
-      width: calc(100% + 60px);
-      background: #e3eaed;
-      text-align: right;
+    .page-item.active .page-link {
+        border: 1px solid darken($primary, 10%);
+        background: $primary !important;
+        color: #fff;
     }
-  }
 
-  footer {
-    background: $secondary;
-    padding: 20px 0 20px 0;
-    text-align: center;
-    color: #ffffff;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
+    #inputButton {
+        min-width: 120px;
+        background: #c08657;
+        border: darken(#c08657, 20%);
+    }
+
+    .register {
+        margin-top: 10px !important;
+    }
+
+    #login {
+        background: #ffffff;
+        border: 1px solid darken(#e1e1e1, 10%);
+        margin: 25% auto 10px auto;
+        padding: 20px 30px 20px 30px;
+        box-shadow: 1px 1px 10px -4px #1b1e21;
+
+        input {
+            max-width: 100% !important;
+        }
+
+        label {
+            margin-bottom: 0;
+        }
+
+        #button-section {
+            border-top: 1px solid darken(#e1e1e1, 10%);
+            margin: 0 0 -20px -30px;
+            padding: 10px 30px 10px 30px;
+            width: calc(100% + 60px);
+            background: #e3eaed;
+            text-align: right;
+        }
+    }
+
+    footer {
+        background: $secondary;
+        padding: 20px 0 20px 0;
+        text-align: center;
+        color: #ffffff;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
 }

@@ -68,6 +68,11 @@ class User implements UserInterface
      */
     private $last_logged_in;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $avatar_url;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -226,6 +231,18 @@ class User implements UserInterface
     public function setLastLoggedIn(\DateTimeInterface $last_logged_in): self
     {
         $this->last_logged_in = $last_logged_in;
+
+        return $this;
+    }
+
+    public function getAvatarUrl(): ?string
+    {
+        return $this->avatar_url;
+    }
+
+    public function setAvatarUrl(?string $avatar_url): self
+    {
+        $this->avatar_url = $avatar_url;
 
         return $this;
     }
