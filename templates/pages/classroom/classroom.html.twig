@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="card">
+        <h3 class="card-header">Classroom Instructions</h3>
+
+        <div class="card-body">
+            <p>
+                Welcome to our classroom. Today you will encounter reading material followed by a short quiz. The
+                reading material needs to be read in it's entirety and understood before attempting the test. At the end
+                of the reading you will be given a series of 10 questions that consist of multiple choice and true or
+                false questions. You will be required to achieve a score of 70% or more to pass. If you do fail you may
+                re-take the test as many times as you need. After all is completed you will be asked to pick a range
+                day! Test questions must NEVER be shared nor should the answers be looked up. The only person allowed to
+                take or view this test is the person legally attempting to get their Conceal and Carry.
+            </p>
+
+            <p>
+                <strong>
+                    By clicking continue I agree that I have read and agree to the above terms. I the person taking
+                    this test am legally allowed to obtain a conceal and carry and I the test taker will be the person
+                    at the range on test day.
+                </strong>
+            </p>
+
+            <a href="{{ path('classroom_lesson') }}" class="btn btn-primary">Continue</a>
+        </div>
+    </div>
+{% endblock %}
+
+

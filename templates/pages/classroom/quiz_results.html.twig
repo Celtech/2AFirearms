@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="card">
+        <h3 class="card-header">Results</h3>
+
+        <div class="card-body">
+            {% if score %}
+                {% if (score/10*100) > 70 %}
+                    <p>You scored {{ score/10*100 }}%. You needed 70% to pass. Congratgulations!</p>
+                {% else %}
+                    <p>You scored {{ score/10*100 }}%. You needed 70% to pass. You may re-take the test when you feel
+                        ready!</p>
+                {% endif %}
+            {% else %}
+                <p>You have no quiz results!</p>
+            {% endif %}
+
+            <a class="btn btn-primary" href="{{ path('index') }}">Go Home</a>
+        </div>
+    </div>
+{% endblock %}
+
+

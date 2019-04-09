@@ -16,12 +16,6 @@
                 <li class="nav-item {% if app.request.attributes.get('_route') == 'about' %}active{% endif %}">
                     <a class="nav-link" aria-label="about us" href="{{ path('about') }}">About Us</a>
                 </li>
-                <li class="nav-item {% if app.request.attributes.get('_route') == 'reviews' %}active{% endif %}">
-                    <a class="nav-link" aria-label="Reviews" href="{{ path('reviews') }}">Reviews</a>
-                </li>
-                <li class="nav-item {% if app.request.attributes.get('_route') == 'shop' %}active{% endif %}">
-                    <a class="nav-link" aria-label="Shop" href="{{ path('shop') }}">Shop</a>
-                </li>
                 <li class="nav-item {% if app.request.attributes.get('_route') == 'contact' %}active{% endif %}">
                     <a class="nav-link" aria-label="Contact Us" href="{{ path('contact') }}">Contact Us</a>
                 </li>
@@ -30,17 +24,15 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false" aria-label="dropdown">
-                            <img id="avatar"
-                                 src="https://res.cloudinary.com/demo/image/gravatar/d_identicon,h_20,w_20,c_fill/a9a1a6dafde8cf0c7e8ee9b177160939.jpg"
-                                 alt="avatar">
+                            Welcome back, <strong>{{ app.user.getFirstName() }}</strong>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <div class="dropdown-item">Signed in
                                 as {{ app.user.getFullName() }}</div>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ path('profile', {'id':app.user.getId()}) }}">My
+                            <a class="dropdown-item" href="{{ path('profile', {'id':app.user.getId()}) }}">Edit My
                                 Profile</a>
-                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="{{ path('classroom') }}">My Classes</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ path('app_logout') }}">Logout</a>
                         </div>
