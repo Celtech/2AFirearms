@@ -33,7 +33,7 @@ class LoginController extends AbstractController
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid() && $this->captchaverify($request->get('g-recaptcha-response'))) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $user->setPassword(
                 $passwordEncoder->encodePassword(
                     $user,
