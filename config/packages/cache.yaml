@@ -1,7 +1,7 @@
 framework:
-  esi: { enabled: true }
-  trusted_hosts: [127.0.0.1]
-  fragments: { path: /_fragment }
+#  esi: { enabled: true }
+  #  trusted_hosts: [127.0.0.1]
+  #  fragments: { path: /_fragment }
   cache:
   # Put the unique name of your app here: the prefix seed
   # is used to compute stable namespaces for cache keys.
