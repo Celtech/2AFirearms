@@ -9,20 +9,20 @@
             <form>
                 <div class="form-group">
                     <label for="email" class="sr-only">email</label>
-                    <input type="text" name="email" class="form-control"
+                    <input type="text" name="email" class="form-control" id="email"
                            placeholder="Your email" {% if loggedIn %} value="{{ user.getEmail() }}" {% endif %}>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="first_name" class="sr-only">first name</label>
-                        <input type="text" name="first_name" class="form-control"
+                        <input type="text" name="first_name" id="first_name" class="form-control"
                                placeholder="First name" {% if loggedIn %} value="{{ user.getFirstName() }}" {% endif %}>
                     </div>
 
                     <div class="form-group col-md-6">
                         <label for="last_name" class="sr-only">last name</label>
-                        <input type="text" name="last_name" class="form-control"
+                        <input type="text" name="last_name" id="last_name" class="form-control"
                                placeholder="Last name" {% if loggedIn %} value="{{ user.getLastName() }}" {% endif %}>
                     </div>
                 </div>
