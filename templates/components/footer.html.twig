@@ -8,13 +8,15 @@
         </div>
         <div class="col-md-4 footer-nav animated fadeInUp">
             <h4>Menu —</h4>
-            <div class="col-md-6">
-                <ul class="pages">
-                    <li><a href="{{ path('classroom') }}">The Classroom</a></li>
-                    <li><a href="{{ path('contact') }}">Get In Touch</a></li>
-                    <li><a href="{{ path('profile', {'id':app.user.getId()}) }}">My Profile</a></li>
-                </ul>
-            </div>
+            {% if app.user %}
+                <div class="col-md-6">
+                    <ul class="pages">
+                        <li><a href="{{ path('classroom') }}">The Classroom</a></li>
+                        <li><a href="{{ path('contact') }}">Get In Touch</a></li>
+                        <li><a href="{{ path('profile', {'id':app.user.getId()}) }}">My Profile</a></li>
+                    </ul>
+                </div>
+            {% endif %}
             <div class="col-md-6">
                 <ul class="list">
                     <li><a href="{{ path('about') }}">About Us</a></li>
