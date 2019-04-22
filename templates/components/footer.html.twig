@@ -10,17 +10,16 @@
             <h4>Menu —</h4>
             <div class="col-md-6">
                 <ul class="pages">
-                    <li><a href="#">The Classroom</a></li>
-                    <li><a href="#">Get In Touch</a></li>
-                    <li><a href="#">My Profile</a></li>
+                    <li><a href="{{ path('classroom') }}">The Classroom</a></li>
+                    <li><a href="{{ path('contact') }}">Get In Touch</a></li>
+                    <li><a href="{{ path('profile', {'id':app.user.getId()}) }}">My Profile</a></li>
                 </ul>
             </div>
             <div class="col-md-6">
                 <ul class="list">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contacts</a></li>
-                    <li><a href="#">Terms & Condition</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="{{ path('about') }}">About Us</a></li>
+                    <li><a href="{{ path('terms') }}">Terms & Condition</a></li>
+                    <li><a href="{{ path('privacy') }}">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
