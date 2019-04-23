@@ -35,4 +35,4 @@ services:
     doctrine.cache.memcached:
       class: Doctrine\Common\Cache\MemcachedCache
       calls:
-        - [setMemcached, [@memcached]]
+        - [setMemcached, ['@memcached']]
