@@ -14,12 +14,6 @@
 
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
-        <noscript>
-            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-                  integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-                  crossorigin="anonymous">
-            ');
-        </noscript>
     {% endblock %}
 </head>
 
@@ -36,15 +30,6 @@
 
 {% block javascripts %}
     {{ encore_entry_script_tags('app') }}
-
-    <script type='text/javascript'>
-        var deferCSS = document.createElement('link');
-        deferCSS.rel = 'stylesheet';
-        deferCSS.href = 'https://use.fontawesome.com/releases/v5.8.1/css/all.css';
-        deferCSS.type = 'text/css';
-        var godefer = document.getElementsByTagName('link')[0];
-        godefer.parentNode.insertBefore(deferCSS, godefer);
-    </script>
 {% endblock %}
 </body>
 </html>
