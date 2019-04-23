@@ -27,12 +27,11 @@ services:
 
   Doctrine\ORM\EntityManagerInterface: '@doctrine.orm.entity_manager'
 
-  memcache:
-    # class 'Memcache' or 'Memcached', depending on which PHP module you use
-    class: Memcache
-    calls:
-      - [ addServers, [ '%memcached.servers%' ]]
+  memcached.doctrine:
+    class: Memcached
+    factory: Symfony\Component\Cache\Adapter\MemcachedAdapter::createConnection
+    arguments: ['%memcached.servers%', '%memcached.config%']
     doctrine.cache.memcached:
       class: Doctrine\Common\Cache\MemcachedCache
       calls:
-        - [setMemcached, ['@memcached']]
+        - [ setMemcached, [ '@memcached.doctrine' ] ]
