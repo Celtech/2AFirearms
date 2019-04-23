@@ -4,8 +4,7 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-  memcached.servers:
-    - { host: 127.0.0.1, port: 11211 }
+
 services:
   # default configuration for services in *this* file
   _defaults:
@@ -28,10 +27,3 @@ services:
   Doctrine\ORM\EntityManagerInterface: '@doctrine.orm.entity_manager'
 
   memcached.doctrine:
-    class: Memcached
-    factory: Symfony\Component\Cache\Adapter\MemcachedAdapter::createConnection
-    arguments: ['%memcached.servers%', '%memcached.config%']
-    doctrine.cache.memcached:
-      class: Doctrine\Common\Cache\MemcachedCache
-      calls:
-        - [ setMemcached, [ '@memcached.doctrine' ] ]
