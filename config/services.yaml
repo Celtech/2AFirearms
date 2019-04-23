@@ -25,5 +25,3 @@ services:
     tags: ['controller.service_arguments']
 
   Doctrine\ORM\EntityManagerInterface: '@doctrine.orm.entity_manager'
-
-  memcached.doctrine:
