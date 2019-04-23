@@ -31,8 +31,7 @@ services:
     # class 'Memcache' or 'Memcached', depending on which PHP module you use
     class: Memcache
     calls:
-      - [ addServers, [ %memcached.servers% ]]
-
+      - [ addServers, [ '%memcached.servers%' ]]
     doctrine.cache.memcached:
       class: Doctrine\Common\Cache\MemcachedCache
       calls:
